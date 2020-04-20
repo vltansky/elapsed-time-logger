@@ -18,13 +18,6 @@ setTimeout(()=>{
     consoleElapsed.end('timer label');
 }, 800);
 
-consoleElapsed.start('test');
-console.log('smth');
-setTimeout(()=>{
-    consoleElapsed.end();//if no parameter provided - the last label will be used
-}, 600)
-
-
 // or use TimeLogger as an instance (recommended)
 const elapsed = new ElapsedLogger();
 const elapsed2 = new ElapsedLogger();
