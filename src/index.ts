@@ -1,10 +1,10 @@
 const convertHrTime = (hrtime: any) => {
   let result = '';
   const sourceMS: number = (hrtime[0] * 1e9 + hrtime[1]) / 1e6;
-  const ms: number = Math.round(sourceMS % 1000),
-    sec: number = Math.round((((sourceMS / 1000) % 60) + Number.EPSILON) * 100) / 100,
-    mins: number = Math.floor((sourceMS / (1000 * 60)) % 60),
-    hrs: number = Math.floor((sourceMS / (1000 * 60 * 60)) % 24);
+  const ms: number = Math.round(sourceMS % 1000);
+  const sec: number = Math.round((((sourceMS / 1000) % 60) + Number.EPSILON) * 100) / 100;
+  const mins: number = Math.floor((sourceMS / (1000 * 60)) % 60);
+  const hrs: number = Math.floor((sourceMS / (1000 * 60 * 60)) % 24);
 
   if (hrs > 0) {
     result += hrs + ' hours ';
