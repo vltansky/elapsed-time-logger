@@ -8,21 +8,21 @@ package doesnt have any dependencies
 ## SimpleTimeLogger
 
 ```
-const { consoleTimeLogger, TimeLogger } = require("../lib/index");
+const { simpleTimeLogger, TimeLogger } = require("../lib/index");
 
 // you can use at as console.time() works
-consoleTimeLogger.start('test');
+simpleTimeLogger.start('test');
 console.log('smth');
 setTimeout(()=>{
-    consoleTimeLogger.end();//if no parameter provided - the last label will be used
+    simpleTimeLogger.end();//if no parameter provided - the last label will be used
 }, 60000)
 
 
-consoleTimeLogger.start('label');
-consoleTimeLogger.start('label2');
+simpleTimeLogger.start('label');
+simpleTimeLogger.start('label2');
 setTimeout(()=>{
-    consoleTimeLogger.end('label2');
-    consoleTimeLogger.end('label');
+    simpleTimeLogger.end('label2');
+    simpleTimeLogger.end('label');
 }, 60000)
 
 
