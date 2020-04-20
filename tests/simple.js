@@ -2,8 +2,8 @@ const { consoleTimeLogger } = require("../lib/index");
 
 (() => {
     consoleTimeLogger.start('test');
-    console.log('vlad');
+    console.log('smth');
     setTimeout(()=>{
         consoleTimeLogger.end();
-    }, 500)
+    }, 60000)
 })();

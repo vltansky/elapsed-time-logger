@@ -22,15 +22,11 @@ const convertHrTime = (hrtime: any) => {
 
     return result;
 }
-class TimeLogger{
+class SimpleTimeLogger{
     timers = new Map();
-    constructor(){
-        console.log('init TimeLogger');
-    }
 
     start(label:string){
         this.timers.set(label, process.hrtime());
-        console.log(`${label} starts`);
     }
 
     end(label:string | null = null){
@@ -50,4 +46,24 @@ class TimeLogger{
         this.timers.delete(label);
     }
 }
-export const consoleTimeLogger = new TimeLogger();
+
+export class TimeLogger{
+    timer: any;
+    label: string | null = null;
+    constructor(label: string | null = null){
+        this.timer = process.hrtime();
+        if(label){
+            this.label = label;
+        }
+    }
+    
+    end(label: string | null = null){
+        const diff = process.hrtime(this.timer);
+        const elapsedTime = convertHrTime(diff);
+        if(!label){
+            label = this.label;
+        }
+        console.log(`${label ? label+' ': ''}${elapsedTime}`);
+    }
+}
+export const consoleTimeLogger = new SimpleTimeLogger();
