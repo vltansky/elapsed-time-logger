@@ -34,20 +34,20 @@ class TimeLogger{
     }
 
     end(label:string | null = null){
-        let timer;
-        if(!label){
+        if (label === null){
             label = Array.from(this.timers.keys()).pop();
         }
-        
-        if(!this.timers.has(label)){
-            return;//todo throw
+
+        const timer = this.timers.get(label);
+        if (!timer){
+            process.emitWarning(`No such label '${label}' for TimeLogger`);
+            return;
         }
 
-        timer = this.timers.get(label);
         const diff = process.hrtime(timer);
         const elapsedTime = convertHrTime(diff);
         console.log(`${label ? label+' ': ''}${elapsedTime}`);
-        //TODO delete timer
+        this.timers.delete(label);
     }
 }
 export const simpleTimeLogger = new TimeLogger();
