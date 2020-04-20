@@ -5,5 +5,5 @@ const { TimeLogger } = require("../lib/index");
     console.log('smth');
     setTimeout(()=>{
         elapsed.end('finished:');
-    }, 500)
+    }, 60000)
 })();

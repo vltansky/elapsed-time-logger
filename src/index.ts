@@ -66,4 +66,4 @@ export class TimeLogger{
         console.log(`${label ? label+' ': ''}${elapsedTime}`);
     }
 }
-export const consoleTimeLogger = new SimpleTimeLogger();
+export const simpleTimeLogger = new SimpleTimeLogger();
