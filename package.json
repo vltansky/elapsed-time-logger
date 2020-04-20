@@ -11,5 +11,8 @@
     "name": "Vlad Tansky",
     "email": "vl.tansky@gmail.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
