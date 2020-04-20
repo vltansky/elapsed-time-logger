@@ -13,10 +13,9 @@ const convertHrTime = (hrtime: any) => {
         result += mins + ' minutes ';
     }
     if (sec >= 1){
-        result += sec
-        result += ' seconds ';
+        result += sec + ' seconds ';
     }
-    if(sec < 1 && ms > 0){
+    if (sec < 1 && sec > 0 && ms > 0){
         result += ms + 'ms';
     }
 

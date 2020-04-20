@@ -1,7 +1,7 @@
 {
-  "name": "@vltansky/time-logger",
+  "name": "elapsed-time-logger",
   "version": "1.0.0",
-  "description": "",
+  "description": "console.time() that returns readable elapsed time e.g Label: 1 hour 20 minutes 10.3 seconds",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -10,7 +10,24 @@
     "lint": "tslint -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+		"time",
+    "timer",
+		"elapsed",
+		"span",
+    "readable",
+		"timing",
+		"perf",
+		"performance",
+		"bench",
+		"benchmark",
+		"profiling",
+		"measure",
+		"seconds",
+		"milliseconds",
+    "nanoseconds",
+    "formatted"
+  ],
   "author": {
     "name": "Vlad Tansky",
     "email": "vl.tansky@gmail.com"
