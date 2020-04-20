@@ -6,31 +6,30 @@ package doesnt have any dependencies
 `$ npm i elapsed-time-logger`
 # Usage
 
-```
-const { simpleTimeLogger, TimeLogger } = require("../lib/index");
+```const { simpleTimeLogger, TimeLogger } = require("elapsed-time-logger");
+const chalk = require('chalk');
 
-// you can use at as console.time() works
+// simpleTimeLogger is similliar to console.time() & console.timeEnd() 
+simpleTimeLogger.start('label');
+simpleTimeLogger.start('timer label');
+setTimeout(()=>{
+    simpleTimeLogger.end('label');
+    simpleTimeLogger.end('timer label');
+}, 800);
+
 simpleTimeLogger.start('test');
 console.log('smth');
 setTimeout(()=>{
     simpleTimeLogger.end();//if no parameter provided - the last label will be used
-}, 60000)
+}, 600)
 
 
-simpleTimeLogger.start('label');
-simpleTimeLogger.start('label2');
-setTimeout(()=>{
-    simpleTimeLogger.end('label2');
-    simpleTimeLogger.end('label');
-}, 60000)
-
-
-// or as an instance
+// or use TimeLogger as an instance (recommended)
 const elapsed = new TimeLogger();
 const elapsed2 = new TimeLogger();
 console.log('smth');
 setTimeout(()=>{
-    elapsed2.end('you can use colors here, try chalk or colors packages:');
+    elapsed2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
     elapsed.end('finished:');
-}, 60000)
+}, 800);
 ```
