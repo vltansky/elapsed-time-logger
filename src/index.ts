@@ -23,7 +23,7 @@ const convertHrTime = (hrtime: any) => {
     return result;
 }
 class TimeLogger{
-    timers = new Map();//TODO maybe set or even array
+    timers = new Map();
     constructor(){
         console.log('init TimeLogger');
     }
@@ -50,4 +50,4 @@ class TimeLogger{
         this.timers.delete(label);
     }
 }
-export const simpleTimeLogger = new TimeLogger();
+export const consoleTimeLogger = new TimeLogger();

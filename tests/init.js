@@ -1,9 +1,9 @@
-const TimeLogger = require("../lib/index").simpleTimeLogger;
+const { consoleTimeLogger } = require("../lib/index");
 
 (() => {
-    TimeLogger.start('test');
+    consoleTimeLogger.start('test');
     console.log('vlad');
     setTimeout(()=>{
-        TimeLogger.end();
+        consoleTimeLogger.end();
     }, 500)
 })();
