@@ -5,7 +5,6 @@ package doesnt have any dependencies
 # Install
 `$ npm i elapsed-time-logger`
 # Usage
-## SimpleTimeLogger
 
 ```
 const { simpleTimeLogger, TimeLogger } = require("../lib/index");
