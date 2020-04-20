@@ -1,4 +1,4 @@
-# Node time logger
+# Console time logger
 Same as console.time() & console.timeEnd() but returns formatted elapsed time `custom label: 4 hours 10 minutes 23.5 seconds` or if less then a second: `540ms`
 
 # Usage
