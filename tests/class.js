@@ -4,4 +4,4 @@ const elapsed = new TimeLogger();
 console.log('smth');
 setTimeout(()=>{
     elapsed.end('finished:');
-}, 60000)
+}, 72000)

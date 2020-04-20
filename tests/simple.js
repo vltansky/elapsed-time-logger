@@ -1,7 +1,7 @@
-const { consoleTimeLogger } = require("../lib/index");
+const { simpleTimeLogger } = require("../lib/index");
 
-consoleTimeLogger.start('test');
+simpleTimeLogger.start('test');
 console.log('smth');
 setTimeout(()=>{
-    consoleTimeLogger.end();
+    simpleTimeLogger.end();
 }, 60000)
