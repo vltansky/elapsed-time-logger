@@ -4,4 +4,4 @@ simpleTimeLogger.start('test');
 console.log('smth');
 setTimeout(()=>{
     simpleTimeLogger.end();
-}, 60000)
+}, 1200)

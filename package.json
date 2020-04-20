@@ -1,8 +1,12 @@
 {
   "name": "elapsed-time-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Similiar to console.time() but returns readable elapsed time e.g Label: 1 hour 20 minutes 10.3 seconds",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
