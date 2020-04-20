@@ -34,7 +34,7 @@ class SimpleTimeLogger {
     this.timers.delete(label);
   }
 
-  get(label: any){
+  get(label: any) {
     const timer = this.timers.get(label);
     if (!timer) {
       process.emitWarning(`No such label '${label}' for ElapsedLogger`);
