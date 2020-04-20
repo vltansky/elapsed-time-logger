@@ -1,10 +1,11 @@
 {
-  "name": "@vltansky/timelogger",
+  "name": "@vltansky/time-logger",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "watch": "tsc --watch",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +17,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^13.13.0",
     "prettier": "^2.0.4",
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
