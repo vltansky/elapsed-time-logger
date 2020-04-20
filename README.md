@@ -6,27 +6,28 @@ package doesnt have any dependencies
 `$ npm i elapsed-time-logger`
 # Usage
 
-```const { simpleTimeLogger, TimeLogger } = require("elapsed-time-logger");
+```const { consoleElapsed, ElapsedLogger } = require("elapsed-time-logger");
+// chalk is't required, added as example to show that you can use colors in output
 const chalk = require('chalk');
 
-// simpleTimeLogger is similliar to console.time() & console.timeEnd() 
-simpleTimeLogger.start('label');
-simpleTimeLogger.start('timer label');
+// consoleElapsed is similliar to console.time() & console.timeEnd() 
+consoleElapsed.start('label');
+consoleElapsed.start('timer label');
 setTimeout(()=>{
-    simpleTimeLogger.end('label');
-    simpleTimeLogger.end('timer label');
+    consoleElapsed.end('label');
+    consoleElapsed.end('timer label');
 }, 800);
 
-simpleTimeLogger.start('test');
+consoleElapsed.start('test');
 console.log('smth');
 setTimeout(()=>{
-    simpleTimeLogger.end();//if no parameter provided - the last label will be used
+    consoleElapsed.end();//if no parameter provided - the last label will be used
 }, 600)
 
 
 // or use TimeLogger as an instance (recommended)
-const elapsed = new TimeLogger();
-const elapsed2 = new TimeLogger();
+const elapsed = new ElapsedLogger();
+const elapsed2 = new ElapsedLogger();
 console.log('smth');
 setTimeout(()=>{
     elapsed2.end(chalk.green('you can use colors here, try chalk or colors packages:'));

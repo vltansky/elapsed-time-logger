@@ -46,7 +46,7 @@ class SimpleTimeLogger {
   }
 }
 
-export class TimeLogger {
+export class ElapsedLogger {
   timer: any;
   label: string | null = null;
   constructor(label: string | null = null) {
@@ -65,4 +65,4 @@ export class TimeLogger {
     console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
   }
 }
-export const simpleTimeLogger = new SimpleTimeLogger();
+export const consoleElapsed = new SimpleTimeLogger();

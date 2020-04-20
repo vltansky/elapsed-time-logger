@@ -1,7 +1,7 @@
-const { TimeLogger } = require("../lib/index");
+const { ElapsedLogger } = require("../lib/index");
 
-const elapsed = new TimeLogger();
+const elapsed = new ElapsedLogger();
 console.log('smth');
 setTimeout(()=>{
     elapsed.end('finished:');
-}, 72000)
+}, 400)
