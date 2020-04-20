@@ -28,21 +28,21 @@ class SimpleTimeLogger {
     this.timers.set(label, process.hrtime());
   }
 
-  end(label: string | null = null) {
-    if (label === null) {
-      label = Array.from(this.timers.keys()).pop();
-    }
-
-    const timer = this.timers.get(label);
-    if (!timer) {
-      process.emitWarning(`No such label '${label}' for TimeLogger`);
-      return;
-    }
-
-    const diff = process.hrtime(timer);
-    const elapsedTime = convertHrTime(diff);
+  end(label: string) {
+    const elapsedTime = this.get(label);
     console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
     this.timers.delete(label);
+  }
+
+  get(label: any){
+    const timer = this.timers.get(label);
+    if (!timer) {
+      process.emitWarning(`No such label '${label}' for ElapsedLogger`);
+      return;
+    }
+    const diff = process.hrtime(timer);
+    const elapsedTime = convertHrTime(diff);
+    return elapsedTime;
   }
 }
 

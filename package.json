@@ -8,11 +8,16 @@
     "lib/**/*"
   ],
   "scripts": {
+    "test": "jest --config jestconfig.json",
     "build": "tsc",
     "watch": "tsc --watch",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -23,20 +28,20 @@
   },
   "homepage": "https://github.com/vltansky/elapsed-time-logger#readme",
   "keywords": [
-		"time",
+    "time",
     "timer",
-		"elapsed",
-		"span",
+    "elapsed",
+    "span",
     "readable",
-		"timing",
-		"perf",
-		"performance",
-		"bench",
-		"benchmark",
-		"profiling",
-		"measure",
-		"seconds",
-		"milliseconds",
+    "timing",
+    "perf",
+    "performance",
+    "bench",
+    "benchmark",
+    "profiling",
+    "measure",
+    "seconds",
+    "milliseconds",
     "nanoseconds",
     "formatted"
   ],
@@ -46,8 +51,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/node": "^13.13.0",
+    "jest": "^25.4.0",
     "prettier": "^2.0.4",
+    "ts-jest": "^25.4.0",
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
