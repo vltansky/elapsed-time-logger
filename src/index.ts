@@ -33,7 +33,7 @@ class ElapsedLogger {
     console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
   }
 
-  get(): string{
+  get(): string {
     const diff = process.hrtime(this.timer);
     return convertHrTime(diff);
   }
