@@ -1,4 +1,4 @@
-import ElapsedLogger from "../lib/index";
+import * as ElapsedLogger from "../lib/index";
 
 it('console log', () => {
     console.log = jest.fn();
