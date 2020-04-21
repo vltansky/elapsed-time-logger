@@ -1,6 +1,6 @@
-const consoleElapsed = require("../lib/index");
+const elapsed = require("../lib/index");
 
-consoleElapsed.start('test');
+elapsed.start('test');
 setTimeout(()=>{
-    consoleElapsed.end('test');
+    elapsed.end('test');
 }, 1300);
