@@ -1,8 +1,8 @@
-import { ElapsedLogger } from "../lib/index";
+import ElapsedLogger from "../lib/index";
 
 it('console log', () => {
     console.log = jest.fn();
-    const elapsed = new ElapsedLogger();
+    const elapsed = ElapsedLogger.start();
     setTimeout(()=>{
         elapsed.end('finished:');
         expect(console.log).toHaveBeenCalledWith('finished: 1.5 seconds');

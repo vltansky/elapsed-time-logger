@@ -21,8 +21,11 @@ const convertHrTime = (hrtime: any) => {
 
   return result;
 };
-
-class ElapsedLogger {
+interface IElapsedLogger{
+  end(label:string):void;
+  get():string
+}
+class ElapsedLogger implements IElapsedLogger{
   timer: any;
   constructor() {
     this.timer = process.hrtime();
@@ -41,13 +44,13 @@ class ElapsedLogger {
 class SimpleTimeLogger {
   timers = new Map();
 
-  start(label: string | null = null): [number, number] | ElapsedLogger {
+  start(label: string | null = null): IElapsedLogger {
+    const elapsed = new ElapsedLogger();
     if (!label) {
-      return new ElapsedLogger();
+      return elapsed;
     }
-    const hrtime = process.hrtime();
-    this.timers.set(label, hrtime);
-    return hrtime;
+    this.timers.set(label, elapsed);
+    return elapsed;
   }
 
   end(label: string, overrideLabel: string | null = null) {
@@ -63,9 +66,7 @@ class SimpleTimeLogger {
       process.emitWarning(`No such label '${label}' for ElapsedLogger`);
       return false;
     }
-    const diff = process.hrtime(timer);
-    const elapsedTime = convertHrTime(diff);
-    return elapsedTime;
+    return timer.get();
   }
 }
 
