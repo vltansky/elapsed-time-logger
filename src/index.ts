@@ -1,3 +1,4 @@
+import hrtime from 'browser-process-hrtime';
 interface IElapsedLogger {
   end(label: string): void;
   get(): string;
@@ -6,7 +7,7 @@ type HrTime = [number, number];
 class ElapsedLogger implements IElapsedLogger {
   private _timer: HrTime;
   constructor() {
-    this._timer = process.hrtime();
+    this._timer = hrtime();
   }
 
   end(label: string = '') {
@@ -15,7 +16,7 @@ class ElapsedLogger implements IElapsedLogger {
   }
 
   get(): string {
-    const diff: HrTime = process.hrtime(this._timer);
+    const diff: HrTime = hrtime(this._timer);
     return this.convertHrTime(diff);
   }
 
