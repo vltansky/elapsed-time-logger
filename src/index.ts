@@ -55,7 +55,7 @@ class SimpleTimeLogger {
     return elapsed;
   }
 
-  end(label: string, overrideLabel: string | null = null):void {
+  end(label: string, overrideLabel: string | null = null): void {
     const elapsedTime = this.get(label);
     const output = overrideLabel ? overrideLabel : label;
     console.log(`${output ? output + ' ' : ''}${elapsedTime}`);
