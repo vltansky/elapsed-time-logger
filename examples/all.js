@@ -27,6 +27,8 @@ const elapsedTimer = elapsed.start();
 // const elapsedTimer2 = elapsed.start();
 console.log('smth');
 setTimeout(()=>{
+    const t = elapsedTimer.get();
+    console.log(t);
     // elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
     elapsedTimer.end('finished:');
 }, 800);

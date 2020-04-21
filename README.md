@@ -25,6 +25,8 @@ const elapsedTimer2 = elapsed.start();
 setTimeout(()=>{
     elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
     // output: you can use colors here, try chalk or colors packages: 806ms
+    const time = elapsedTimer.get();//return 806ms
+    console.log(time);
     elapsedTimer.end('finished:');// output: finished: 806ms
 }, 800);
 ```

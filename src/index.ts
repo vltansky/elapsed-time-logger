@@ -24,27 +24,24 @@ const convertHrTime = (hrtime: any) => {
 
 class ElapsedLogger {
   timer: any;
-  label: string | null = null;
-  constructor(label: string | null = null) {
+  constructor() {
     this.timer = process.hrtime();
-    if (label) {
-      this.label = label;
-    }
   }
 
-  end(label: string | null = null) {
-    const diff = process.hrtime(this.timer);
-    const elapsedTime = convertHrTime(diff);
-    if (!label) {
-      label = this.label;
-    }
+  end(label: string = '') {
+    const elapsedTime = this.get();
     console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
+  }
+
+  get(): string{
+    const diff = process.hrtime(this.timer);
+    return convertHrTime(diff);
   }
 }
 class SimpleTimeLogger {
   timers = new Map();
 
-  start(label: string | null = null): number | Object {
+  start(label: string | null = null): [number, number] | ElapsedLogger {
     if (!label) {
       return new ElapsedLogger();
     }
