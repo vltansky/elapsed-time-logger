@@ -2,6 +2,7 @@ import hrtime from 'browser-process-hrtime';
 interface IElapsedLogger {
   end(label: string): void;
   get(): string;
+  parse(hrtime: HrTime): string;
 }
 type HrTime = [number, number];
 class ElapsedLogger implements IElapsedLogger {
@@ -17,10 +18,10 @@ class ElapsedLogger implements IElapsedLogger {
 
   get(): string {
     const diff: HrTime = hrtime(this._timer);
-    return this.convertHrTime(diff);
+    return this.parse(diff);
   }
 
-  private convertHrTime(hrtime: HrTime): string {
+  parse(hrtime: HrTime): string {
     let result = '';
     const sourceMS: number = (hrtime[0] * 1e9 + hrtime[1]) / 1e6;
     const ms: number = Math.round(sourceMS % 1000);
