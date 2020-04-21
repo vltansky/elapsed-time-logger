@@ -7,25 +7,24 @@ package doesnt have any dependencies
 # Usage
 
 ```
-const { consoleElapsed, ElapsedLogger } = require("elapsed-time-logger");
+const elapsed = require("elapsed-time-logger");
 // chalk is't required, added as example to show that you can use colors in output
 const chalk = require('chalk');
-
-// consoleElapsed is similliar to console.time() & console.timeEnd() 
-consoleElapsed.start('label');
-consoleElapsed.start('timer label');
+ 
+// elapsed is similliar to console.time() & console.timeEnd() 
+elapsed.start('label');
+elapsed.start('label_id');
 setTimeout(()=>{
-    consoleElapsed.end('label');// output: label 801ms
-    consoleElapsed.end('timer label');// output: timer label 801ms
+    elapsed.end('label');//output: label 801ms
+    elapsed.end('label_id', 'Text that goes here will override label on output');
+    // output: Text that goes here will override label on output 801ms
 }, 800);
-
-// or use TimeLogger as an instance (recommended)
-const elapsed = new ElapsedLogger();
-const elapsed2 = new ElapsedLogger();
-console.log('smth');
+// if paramter label is not provided, start() will return an instance 
+const elapsedTimer = elapsed.start();
+const elapsedTimer2 = elapsed.start();
 setTimeout(()=>{
-    elapsed2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
+    elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
     // output: you can use colors here, try chalk or colors packages: 806ms
-    elapsed.end('finished:');// output: finished: 806ms
+    elapsedTimer.end('finished:');// output: finished: 806ms
 }, 800);
 ```

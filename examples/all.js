@@ -1,32 +1,32 @@
-const { consoleElapsed, ElapsedLogger } = require("../lib/index");
+const elapsed = require("../lib/index");
 // const chalk = require('chalk');
 
-consoleElapsed.start('test');
+elapsed.start('test');
 setTimeout(()=>{
-    consoleElapsed.end('test');
+    elapsed.end('test');
 }, 1300);
 
 
-consoleElapsed.start('vlad');
+elapsed.start('vlad');
 setTimeout(()=>{
-    const test = consoleElapsed.get('vlad');
+    const test = elapsed.get('vlad');
     console.log(test);
 }, 1200);
 
-// consoleElapsed is similliar to console.time() & console.timeEnd() 
-consoleElapsed.start('label');
-consoleElapsed.start('timer label');
+// ElapsedLogger is similliar to console.time() & console.timeEnd() 
+elapsed.start('label');
+elapsed.start('timer label');
 setTimeout(()=>{
-    consoleElapsed.end('label');
-    consoleElapsed.end('timer label');
+    elapsed.end('label');
+    elapsed.end('timer label');
 }, 800);
 
 
 // or use ElapsedLogger as an instance (recommended)
-const elapsed = new ElapsedLogger();
-// const elapsed2 = new ElapsedLogger();
+const elapsedTimer = elapsed.start();
+// const elapsedTimer2 = elapsed.start();
 console.log('smth');
 setTimeout(()=>{
-    // elapsed2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
-    elapsed.end('finished:');
+    // elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
+    elapsedTimer.end('finished:');
 }, 800);

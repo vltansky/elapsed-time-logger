@@ -21,32 +21,8 @@ const convertHrTime = (hrtime: any) => {
 
   return result;
 };
-class SimpleTimeLogger {
-  timers = new Map();
 
-  start(label: string) {
-    this.timers.set(label, process.hrtime());
-  }
-
-  end(label: string) {
-    const elapsedTime = this.get(label);
-    console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
-    this.timers.delete(label);
-  }
-
-  get(label: any) {
-    const timer = this.timers.get(label);
-    if (!timer) {
-      process.emitWarning(`No such label '${label}' for ElapsedLogger`);
-      return;
-    }
-    const diff = process.hrtime(timer);
-    const elapsedTime = convertHrTime(diff);
-    return elapsedTime;
-  }
-}
-
-export class ElapsedLogger {
+class ElapsedLogger {
   timer: any;
   label: string | null = null;
   constructor(label: string | null = null) {
@@ -65,4 +41,35 @@ export class ElapsedLogger {
     console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
   }
 }
-export const consoleElapsed = new SimpleTimeLogger();
+class SimpleTimeLogger {
+  timers = new Map();
+
+  start(label: string | null = null): number | Object {
+    if(!label){
+      return new ElapsedLogger();
+    }
+    const hrtime = process.hrtime();
+    this.timers.set(label, hrtime);
+    return hrtime;
+  }
+
+  end(label: string, overrideLabel: string | null = null) {
+    const elapsedTime = this.get(label);
+    const output = overrideLabel ? overrideLabel : label;
+    console.log(`${output ? output + ' ' : ''}${elapsedTime}`);
+    this.timers.delete(label);
+  }
+
+  get(label: any): string | boolean {
+    const timer = this.timers.get(label);
+    if (!timer) {
+      process.emitWarning(`No such label '${label}' for ElapsedLogger`);
+      return false;
+    }
+    const diff = process.hrtime(timer);
+    const elapsedTime = convertHrTime(diff);
+    return elapsedTime;
+  }
+}
+
+export = new SimpleTimeLogger();
