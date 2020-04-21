@@ -1,23 +1,52 @@
-import * as ElapsedLogger from "../lib/index";
+import elapsed from "../lib/index";
 
 it('1.2 seconds', done => {
     console.log = jest.fn();
-    ElapsedLogger.start('test');
+    elapsed.start('test');
     setTimeout(()=>{
-        ElapsedLogger.end('test');
+        elapsed.end('test');
         expect(console.log).toHaveBeenCalledWith('test 1.2 seconds ');
         done();
     }, 1200);
-    // jest.advanceTimersByTime(1200);
-    // jest.runAllTimers();
+});
+
+it('get() 1.2 seconds', done => {
+    console.log = jest.fn();
+    elapsed.start('test');
+    setTimeout(()=>{
+        const time = elapsed.get('test');
+        expect(time).toBe('1.2 seconds ');
+        done();
+    }, 1200);
 });
 
 it('1.3 desconds from instance', done => {
     console.log = jest.fn();
-    const elapsed = ElapsedLogger.start();
+    const elapsedTimer = elapsed.start();
     setTimeout(()=>{
-        elapsed.end('finished:');
+        elapsedTimer.end('finished:');
         expect(console.log).toHaveBeenCalledWith('finished: 1.3 seconds ');
         done();
     }, 1300);
+});
+
+it('get() 1.3 desconds from instance', done => {
+    console.log = jest.fn();
+    const elapsedTimer = elapsed.start();
+    setTimeout(()=>{
+        const time = elapsedTimer.get();
+        expect(time).toBe('1.3 seconds ');
+        done();
+    }, 1300);
+});
+
+it('ms check from instance', done => {
+    console.log = jest.fn();
+    const elapsedTimer = elapsed.start();
+    setTimeout(()=>{
+        const time = parseInt(elapsedTimer.get().replace('ms', ''));
+        expect(time).toBeGreaterThanOrEqual(100);
+        expect(time).toBeLessThan(120);
+        done();
+    }, 100);
 });
