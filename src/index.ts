@@ -45,7 +45,7 @@ class SimpleTimeLogger {
   timers = new Map();
 
   start(label: string | null = null): number | Object {
-    if(!label){
+    if (!label) {
       return new ElapsedLogger();
     }
     const hrtime = process.hrtime();
