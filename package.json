@@ -17,7 +17,8 @@
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "release": "dotenv release-it --dry-run"
   },
   "repository": {
     "type": "git",
@@ -56,8 +57,10 @@
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.0",
+    "dotenv-cli": "^3.1.0",
     "jest": "^25.4.0",
     "prettier": "^2.0.4",
+    "release-it": "^13.5.5",
     "ts-jest": "^25.4.0",
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
