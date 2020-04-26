@@ -2,11 +2,14 @@
 Similiar to console.time() & console.timeEnd() but returns formatted elapsed time `custom label: 4 hours 10 minutes 23.5 seconds` or if less then a second: `540ms`
 
 ![CircleCI](https://img.shields.io/circleci/build/github/vltansky/elapsed-time-logger)
-![Coveralls github](https://img.shields.io/coveralls/github/vltansky/elapsed-time-logger)
-![npm](https://img.shields.io/npm/v/elapsed-time-logger)
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![npm version](https://img.shields.io/npm/v/elapsed-time-logger)](https://www.npmjs.com/package/elapsed-time-logger)
 ![David](https://img.shields.io/david/vltansky/elapsed-time-logger)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/elapsed-time-logger)
 ![NPM](https://img.shields.io/npm/l/elapsed-time-logger)
+
+[coveralls-image]: https://img.shields.io/coveralls/github/vltansky/elapsed-time-logger
+[coveralls-url]: https://coveralls.io/github/vltansky/elapsed-time-logger
 
 package have only one dependency
 # Install
