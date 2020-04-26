@@ -8,7 +8,7 @@ Similiar to console.time() & console.timeEnd() but returns formatted elapsed tim
 ![npm bundle size](https://img.shields.io/bundlephobia/min/elapsed-time-logger)
 ![NPM](https://img.shields.io/npm/l/elapsed-time-logger)
 
-package doesnt only one dependency
+package have only one dependency
 # Install
 `$ npm i elapsed-time-logger`
 # Usage
