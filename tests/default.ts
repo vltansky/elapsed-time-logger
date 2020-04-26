@@ -24,7 +24,7 @@ it('ms check from instance', done => {
     const elapsedTimer = elapsed.start();
     setTimeout(()=>{
         const time = parseInt(elapsedTimer.get().replace('ms', ''));
-        expect(time).toBeGreaterThanOrEqual(100);
+        expect(time).toBeGreaterThanOrEqual(95);
         expect(time).toBeLessThan(120);
         done();
     }, 100);
