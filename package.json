@@ -13,7 +13,7 @@
     "watch": "tsc --watch",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "release": "dotenv release-it --dry-run"
+    "release": "dotenv release-it"
   },
   "repository": {
     "type": "git",
