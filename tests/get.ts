@@ -1,4 +1,4 @@
-import elapsed from "../lib/index";
+import * as elapsed from "../lib/index";
 
 const timer = elapsed.start('test');
 jest.spyOn(timer, "_diff").mockReturnValue([100, 1200]);

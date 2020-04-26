@@ -1,4 +1,4 @@
-import elapsed from "../lib/index";
+import * as elapsed from "../lib/index";
 
 describe("Parse function", () => {
     it('should return  20 hours 3 minutes 36 seconds', () => {
