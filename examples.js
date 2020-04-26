@@ -32,3 +32,9 @@ setTimeout(()=>{
     // elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
     elapsedTimer.end('finished:');
 }, 800);
+
+
+elapsed.start('test');
+setTimeout(()=>{
+    elapsed.end('test');
+}, 1300);
