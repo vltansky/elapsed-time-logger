@@ -1,6 +1,6 @@
 import hrtime from 'browser-process-hrtime';
 interface IElapsedLogger {
-  end(label: string): void;
+  end(label?: string): void;
   get(): string;
   parse(hrtime: HrTime): string;
 }
@@ -59,15 +59,15 @@ class SimpleTimeLogger {
 
   end(label: string, overrideLabel: string | null = null): void {
     const elapsedTime = this.get(label);
-    const output = overrideLabel ? overrideLabel : label;
-    console.log(`${output ? output + ' ' : ''}${elapsedTime}`);
+    if(elapsedTime === false){ return; }
+    console.log(`${overrideLabel || label} ${elapsedTime}`);
     this._timers.delete(label);
   }
 
-  get(label: any): string | boolean {
+  get(label: string): string | boolean {
     const timer = this._timers.get(label);
     if (!timer) {
-      process.emitWarning(`No such label '${label}' for ElapsedLogger`);
+      console.warn(`No such label '${label}' for ElapsedLogger`);//process.emitWarning
       return false;
     }
     return timer.get();

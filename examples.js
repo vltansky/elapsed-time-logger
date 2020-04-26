@@ -1,10 +1,21 @@
-const elapsed = require("../lib/index");
+const elapsed = require("./lib/index");
 // const chalk = require('chalk');
+
+elapsed.start('test2');
+setTimeout(()=>{
+    elapsed.end('test2');
+}, 1300);
+
 
 elapsed.start('test');
 setTimeout(()=>{
     elapsed.end('test');
 }, 1300);
+
+elapsed.start('testoverride');
+setTimeout(()=>{
+    elapsed.end('testoverride', 'override label');
+}, 100);
 
 
 elapsed.start('vlad');
@@ -13,7 +24,7 @@ setTimeout(()=>{
     console.log(test);
 }, 1200);
 
-// ElapsedLogger is similliar to console.time() & console.timeEnd() 
+ElapsedLogger is similliar to console.time() & console.timeEnd() 
 elapsed.start('label');
 elapsed.start('timer label');
 setTimeout(()=>{
@@ -33,8 +44,3 @@ setTimeout(()=>{
     elapsedTimer.end('finished:');
 }, 800);
 
-
-elapsed.start('test');
-setTimeout(()=>{
-    elapsed.end('test');
-}, 1300);
