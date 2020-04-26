@@ -1,10 +1,11 @@
 # Elapsed time logger
 Similiar to console.time() & console.timeEnd() but returns formatted elapsed time `custom label: 4 hours 10 minutes 23.5 seconds` or if less then a second: `540ms`
 
-![David](https://img.shields.io/david/vltansky/elapsed-time-logger)
-![npm bundle size](https://img.shields.io/bundlephobia/min/elapsed-time-logger)
+![CircleCI](https://img.shields.io/circleci/build/github/vltansky/elapsed-time-logger)
 ![NPM](https://img.shields.io/npm/l/elapsed-time-logger)
 ![npm](https://img.shields.io/npm/v/elapsed-time-logger)
+![David](https://img.shields.io/david/vltansky/elapsed-time-logger)
+![npm bundle size](https://img.shields.io/bundlephobia/min/elapsed-time-logger)
 
 package doesnt only one dependency
 # Install
