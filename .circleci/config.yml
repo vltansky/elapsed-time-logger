@@ -1,5 +1,6 @@
 version: 2.1
 orbs:
+  coveralls: coveralls/coveralls@1.0.5
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
@@ -11,6 +12,9 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+      - coveralls/upload:
+          flag_name: Test 1
+          verbose: true
 workflows:
     build-and-test:
       jobs:
