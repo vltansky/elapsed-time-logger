@@ -8,8 +8,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "test": "jest --config jestconfig.json",
-    "test:coverage": "jest --config jestconfig.json --collectCoverage=true",
+    "test": "jest --config jestconfig.json --collectCoverage=true",
     "build": "tsc",
     "watch": "tsc --watch",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
