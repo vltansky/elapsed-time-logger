@@ -24,7 +24,7 @@ setTimeout(()=>{
     console.log(test);
 }, 1200);
 
-ElapsedLogger is similliar to console.time() & console.timeEnd() 
+// ElapsedLogger is similliar to console.time() & console.timeEnd() 
 elapsed.start('label');
 elapsed.start('timer label');
 setTimeout(()=>{

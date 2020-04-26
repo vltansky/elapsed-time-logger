@@ -2,6 +2,7 @@ import hrtime from 'browser-process-hrtime';
 interface IElapsedLogger {
   end(label?: string): void;
   get(): string;
+  _diff(): HrTime;
   parse(hrtime: HrTime): string;
 }
 type HrTime = [number, number];
@@ -16,8 +17,12 @@ class ElapsedLogger implements IElapsedLogger {
     console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
   }
 
+  _diff():HrTime{
+    return hrtime(this._timer);
+  }
+
   get(): string {
-    const diff: HrTime = hrtime(this._timer);
+    const diff = this._diff();
     return this.parse(diff);
   }
 

@@ -1,31 +1,30 @@
 import elapsed from "../lib/index";
-it('1.2 seconds', done => {
-    console.log = jest.fn();
-    elapsed.start('test');
-    setTimeout(()=>{
+
+console.log = jest.fn();
+describe("Log function", () => {
+    it('should output 1.2 seconds', () => {
+        const mockHrtime = jest.spyOn(elapsed, 'get').mockReturnValue('1.2 seconds ');
+        elapsed.start('test');
         elapsed.end('test');
+        mockHrtime.mockRestore();
         expect(console.log).toHaveBeenCalledWith('test 1.2 seconds ');
-        done();
-    }, 1200);
-});
+    });
 
-it('1.3 desconds from instance', done => {
-    console.log = jest.fn();
-    const elapsedTimer = elapsed.start();
-    setTimeout(()=>{
+    it('should output 1.2 desconds [class]', () => {
+        const elapsedTimer = elapsed.start();
+        const mockHrtime = jest.spyOn(elapsedTimer, 'get').mockReturnValue('1.2 seconds ');
         elapsedTimer.end('finished:');
-        expect(console.log).toHaveBeenCalledWith('finished: 1.3 seconds ');
-        done();
-    }, 1300);
-});
+        mockHrtime.mockRestore();
+        expect(console.log).toHaveBeenCalledWith('finished: 1.2 seconds ');
+    });
 
-it('ms check from instance', done => {
-    console.log = jest.fn();
-    const elapsedTimer = elapsed.start();
-    setTimeout(()=>{
-        const time = parseInt(elapsedTimer.get().replace('ms', ''));
-        expect(time).toBeGreaterThanOrEqual(95);
-        expect(time).toBeLessThan(120);
-        done();
-    }, 100);
+    it('should return around 100ms [class]', done => {
+        const elapsedTimer = elapsed.start();
+        setTimeout(()=>{
+            const time = parseInt(elapsedTimer.get().replace('ms', ''));
+            expect(time).toBeGreaterThanOrEqual(95);
+            expect(time).toBeLessThan(120);
+            done();
+        }, 100);
+    });
 });
