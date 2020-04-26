@@ -13,7 +13,6 @@ jobs:
             - run: npm install
             - run: npm test
       - coveralls/upload:
-          flag_name: Test 1
           verbose: true
 workflows:
     build-and-test:
