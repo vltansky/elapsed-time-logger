@@ -1,4 +1,4 @@
-const hrtime = require('browser-process-hrtime');
+const hrtime = require('browser-hrtime');
 interface IElapsedLogger {
   end(label?: string): void;
   get(): string;
