@@ -46,7 +46,10 @@
     "seconds",
     "milliseconds",
     "nanoseconds",
-    "formatted"
+    "formatted",
+    "angular",
+    "react",
+    "node"
   ],
   "author": {
     "name": "Vlad Tansky",
