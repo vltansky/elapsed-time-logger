@@ -1,4 +1,4 @@
-const { elapsed } = require("../../lib/cjs");
+const elapsed = require("../../lib/cjs");
 
 console.warn = jest.fn();
 console.log = jest.fn();

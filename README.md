@@ -19,7 +19,7 @@ package depends on [Browser-hrtime](https://github.com/vltansky/browser-hrtime)
 
 ## NodeJS
 ```
-const { elapsed } = require("elapsed-time-logger");
+const elapsed = require("elapsed-time-logger");
 // chalk is't required, added as example to show that you can use colors in output
 const chalk = require('chalk');
  
