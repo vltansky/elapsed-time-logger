@@ -1,4 +1,4 @@
-import elapsed from "../lib/index";
+const { elapsed } = require("../../lib/cjs");
 
 describe("Parse function", () => {
     it('should return  20 hours 3 minutes 36 seconds', () => {

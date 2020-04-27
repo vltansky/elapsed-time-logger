@@ -4,7 +4,7 @@
   "description": "Similiar to console.time() but returns readable elapsed time e.g Label: 1 hour 20 minutes 10.3 seconds",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
-  "browser": "lib/umd/index.min.js",
+  "browser": "lib/umd/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
@@ -16,7 +16,7 @@
     "build:esm": "tsc --module es2015 --target es5 --outDir lib/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir lib/cjs",
     "build:umd": "rollup lib/esm/index.js --format umd --name Elapsed_logger --sourceMap --file lib/umd/index.js --exports named",
-    "build:umd:min": "cd lib/umd && terser --compress --mangle --comments -o index.min.js -- index.js",
+    "build:umd:min": "cd lib/umd && terser --compress --mangle --comments -o index.js -- index.js",
     "watch": "tsc --watch",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",

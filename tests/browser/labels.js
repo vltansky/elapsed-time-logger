@@ -1,4 +1,8 @@
-import elapsed from "../lib/index";
+const revert = process;
+process = undefined;
+import elapsed from "../../lib/esm";
+process = revert;
+
 console.warn = jest.fn();
 console.log = jest.fn();
 
