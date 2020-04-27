@@ -42,6 +42,7 @@ setTimeout(()=>{
     elapsedTimer.end('finished:');// output: finished: 806ms
 }, 800);
 ```
+<img src="node.png">
 
 ## ESM (Browser e.g Angular, react, etc.)
 ```
@@ -65,3 +66,4 @@ setTimeout(()=>{
     elapsedTimer.end('finished:');// output: finished: 806ms
 }, 800);
 ```
+<img src="browser.png">
