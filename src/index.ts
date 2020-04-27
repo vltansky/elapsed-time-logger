@@ -50,36 +50,35 @@ class ElapsedLogger implements IElapsedLogger {
     return result;
   }
 }
-class SimpleTimeLogger {
-  private _timers = new Map<string, IElapsedLogger>();
 
-  start = (label: string | null = null): IElapsedLogger => {
-    const elapsed = new ElapsedLogger();
-    if (!label) {
-      return elapsed;
-    }
-    this._timers.set(label, elapsed);
+const _timers = new Map<string, IElapsedLogger>();
+
+export const start = (label: string | null = null): IElapsedLogger => {
+  const elapsed = new ElapsedLogger();
+  if (!label) {
     return elapsed;
   }
-
-  end = (label: string, overrideLabel: string | null = null): void => {
-    const elapsedTime = this.get(label);
-    if(elapsedTime === false){ return; }
-    console.log(`${overrideLabel || label} ${elapsedTime}`);
-    this._timers.delete(label);
-  }
-
-  get = (label: string): string | boolean => {
-    const timer = this._timers.get(label);
-    if (!timer) {
-      console.warn(`No such label '${label}' for ElapsedLogger`);//process.emitWarning
-      return false;
-    }
-    return timer.get();
-  }
+  _timers.set(label, elapsed);
+  return elapsed;
 }
-const elapsed = new SimpleTimeLogger();
-export const get = elapsed.get;
-export const end = elapsed.end;
-export const start = elapsed.start; 
-export default elapsed;
+
+export const end = (label: string, overrideLabel: string | null = null): void => {
+  const elapsedTime = get(label);
+  if(elapsedTime === false){ return; }
+  console.log(`${overrideLabel || label} ${elapsedTime}`);
+  _timers.delete(label);
+}
+
+export const get = (label: string): string | boolean => {
+  const timer = _timers.get(label);
+  if (!timer) {
+    console.warn(`No such label '${label}' for ElapsedLogger`);//process.emitWarning
+    return false;
+  }
+  return timer.get();
+}
+export default {
+  get: get,
+  end: end,
+  start: start
+}

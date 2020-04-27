@@ -9,8 +9,8 @@ process = revert;
 console.log = jest.fn();
 describe("Log function", () => {
     it('should output 1.2 seconds', () => {
-        const mockHrtime = jest.spyOn(elapsed, 'get').mockReturnValue('1.2 seconds ');
-        elapsed.start('test');
+        const elapsedTimer = elapsed.start('test');
+        const mockHrtime = jest.spyOn(elapsedTimer, 'get').mockReturnValue('1.2 seconds ');
         elapsed.end('test');
         mockHrtime.mockRestore();
         expect(console.log).toHaveBeenCalledWith('test 1.2 seconds ');
