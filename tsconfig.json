@@ -6,8 +6,9 @@
       "outDir": "./lib",
       "allowJs": true,
       "strict": true,
+      "moduleResolution": "node",
       "esModuleInterop": false
     },
     "include": ["src"],
-    "exclude": ["node_modules", "**/__tests__/*"]
+    "exclude": ["node_modules", "tests"],
   }

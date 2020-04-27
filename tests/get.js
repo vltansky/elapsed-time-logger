@@ -1,4 +1,5 @@
-import * as elapsed from "../lib/index";
+// import elapsed from "../lib/cjs";
+const { elapsed } = require("../lib/cjs");
 
 const timer = elapsed.start('test');
 jest.spyOn(timer, "_diff").mockReturnValue([100, 1200]);

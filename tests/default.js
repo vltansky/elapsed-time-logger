@@ -1,4 +1,4 @@
-import * as elapsed from "../lib/index";
+import elapsed from "../lib/index";
 
 console.log = jest.fn();
 describe("Log function", () => {

@@ -1,4 +1,4 @@
-import * as elapsed from "../lib/index";
+import elapsed from "../lib/index";
 console.warn = jest.fn();
 console.log = jest.fn();
 

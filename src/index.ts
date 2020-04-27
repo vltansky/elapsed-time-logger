@@ -78,5 +78,5 @@ class SimpleTimeLogger {
     return timer.get();
   }
 }
-
-export = new SimpleTimeLogger();
+export const elapsed = new SimpleTimeLogger();
+export default elapsed;
