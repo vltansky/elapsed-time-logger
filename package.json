@@ -57,7 +57,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "browser-hrtime": "https://github.com/vltansky/browser-hrtime.git"
+    "browser-hrtime": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^13.13.0",
