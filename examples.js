@@ -1,4 +1,4 @@
-const elapsed = require("./lib/index");
+const { elapsed } = require("./lib/cjs");
 // const chalk = require('chalk');
 
 elapsed.start('test2');
