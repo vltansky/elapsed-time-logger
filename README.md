@@ -47,23 +47,47 @@ setTimeout(()=>{
 ## ESM (Browser e.g Angular, react, etc.)
 ```
 import elapsed from 'elapsed-time-logger';
-// elapsed is similliar to console.time() & console.timeEnd() 
+elapsed.start('test2');
+setTimeout(()=>{
+    elapsed.end('test2');
+}, 1300);
+
+
+elapsed.start('test');
+setTimeout(()=>{
+    elapsed.end('test');
+}, 1300);
+
+elapsed.start('testoverride');
+setTimeout(()=>{
+    elapsed.end('testoverride', 'override label');
+}, 100);
+
+
+elapsed.start('vlad');
+setTimeout(()=>{
+    const test = elapsed.get('vlad');
+    console.log(test);
+}, 1200);
+
+// ElapsedLogger is similliar to console.time() & console.timeEnd() 
 elapsed.start('label');
-elapsed.start('label_id');
+elapsed.start('timer label');
 setTimeout(()=>{
-    elapsed.end('label');//output: label 801ms
-    elapsed.end('label_id', 'Text that goes here will override label on output');
-    // output: Text that goes here will override label on output 801ms
+    elapsed.end('label');
+    elapsed.end('timer label');
 }, 800);
-// if paramter label is not provided, start() will return an instance 
+
+
+// or use ElapsedLogger as an instance (recommended)
 const elapsedTimer = elapsed.start();
-const elapsedTimer2 = elapsed.start();
+// const elapsedTimer2 = elapsed.start();
+console.log('smth');
 setTimeout(()=>{
-    elapsedTimer2.end('elapsed2:');
-    // output: you can use colors here, try chalk or colors packages: 806ms
-    const time = elapsedTimer.get();//return 806ms
-    console.log(time);
-    elapsedTimer.end('finished:');// output: finished: 806ms
+    const t = elapsedTimer.get();
+    console.log(t);
+    // elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
+    elapsedTimer.end('finished:');
 }, 800);
 ```
 <img src="browser.png">
@@ -74,8 +98,7 @@ setTimeout(()=>{
 <html>
 
 <head>
-    <!-- <script crossorigin src="https://unpkg.com/elapsed-time-logger/lib/umd/index.js"></script> -->
-    <script src="../lib/umd/index.js"></script>
+    <script crossorigin src="https://unpkg.com/elapsed-time-logger/lib/umd/index.js"></script>
     <script>
     var elapsed = Elapsed_logger;
     elapsed.start('test2');
