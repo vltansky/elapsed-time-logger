@@ -8,6 +8,8 @@ Works in NodeJS and in browser.
 ![David](https://img.shields.io/david/vltansky/elapsed-time-logger)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/elapsed-time-logger)
 ![NPM](https://img.shields.io/npm/l/elapsed-time-logger)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 
 [coveralls-image]: https://img.shields.io/coveralls/github/vltansky/elapsed-time-logger
 [coveralls-url]: https://coveralls.io/github/vltansky/elapsed-time-logger
