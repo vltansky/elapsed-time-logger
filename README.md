@@ -9,6 +9,7 @@ Works in NodeJS and in browser.
 ![npm bundle size](https://img.shields.io/bundlephobia/min/elapsed-time-logger)
 ![NPM](https://img.shields.io/npm/l/elapsed-time-logger)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger?ref=badge_shield)
 
 
 [coveralls-image]: https://img.shields.io/coveralls/github/vltansky/elapsed-time-logger
@@ -155,3 +156,6 @@ setTimeout(()=>{
 
 </html>
 ```
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger?ref=badge_large)
