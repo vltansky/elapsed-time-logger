@@ -27,7 +27,7 @@ describe("Log function", () => {
         setTimeout(()=>{
             const time = parseInt(elapsedTimer.get().replace('ms', ''));
             expect(time).toBeGreaterThanOrEqual(95);
-            expect(time).toBeLessThan(120);
+            expect(time).toBeLessThan(140);
             done();
         }, 100);
     });
