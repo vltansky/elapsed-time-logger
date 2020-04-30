@@ -20,7 +20,7 @@ package depends on [Browser-hrtime](https://github.com/vltansky/browser-hrtime)
 # Usage
 
 ## NodeJS
-```
+```js
 const elapsed = require("elapsed-time-logger");
 // chalk is't required, added as example to show that you can use colors in output
 const chalk = require('chalk');
@@ -47,7 +47,7 @@ setTimeout(()=>{
 <img src="node.png">
 
 ## ESM (Browser e.g Angular, react, etc.)
-```
+```js
 import elapsed from 'elapsed-time-logger';
 elapsed.start('test2');
 setTimeout(()=>{
@@ -95,7 +95,7 @@ setTimeout(()=>{
 <img src="browser.png">
 
 ## UMD
-```
+```html
 <!DOCTYPE html>
 <html>
 

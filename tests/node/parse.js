@@ -1,4 +1,4 @@
-const elapsed = require("../../lib/cjs");
+const elapsed = require("../../lib");
 
 describe("Parse function", () => {
     it('should return  20 hours 3 minutes 36 seconds', () => {

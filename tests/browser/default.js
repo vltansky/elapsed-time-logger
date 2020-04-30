@@ -1,10 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-const revert = process;
-process = undefined;
-import elapsed from "../../lib/esm";
-process = revert;
+process.hrtime = undefined;
+import elapsed from "../../lib";
 
 console.log = jest.fn();
 describe("Log function", () => {

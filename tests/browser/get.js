@@ -1,7 +1,5 @@
-const revert = process;
-process = undefined;
-import elapsed from "../../lib/esm";
-process = revert;
+process.hrtime = undefined;
+import elapsed from "../../lib";
 
 const timer = elapsed.start('test');
 jest.spyOn(timer, "_diff").mockReturnValue([100, 1200]);

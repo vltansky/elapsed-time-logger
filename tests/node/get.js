@@ -1,4 +1,4 @@
-const elapsed = require("../../lib/cjs");
+const elapsed = require("../../lib");
 
 const timer = elapsed.start('test');
 jest.spyOn(timer, "_diff").mockReturnValue([100, 1200]);

@@ -53,7 +53,7 @@ class ElapsedLogger implements IElapsedLogger {
 
 const _timers = new Map<string, IElapsedLogger>();
 
-export const start = (label: string | null = null): IElapsedLogger => {
+const start = (label: string | null = null): IElapsedLogger => {
   const elapsed = new ElapsedLogger();
   if (!label) {
     return elapsed;
@@ -62,14 +62,14 @@ export const start = (label: string | null = null): IElapsedLogger => {
   return elapsed;
 }
 
-export const end = (label: string, overrideLabel: string | null = null): void => {
+const end = (label: string, overrideLabel: string | null = null): void => {
   const elapsedTime = get(label);
   if(elapsedTime === false){ return; }
   console.log(`${overrideLabel || label} ${elapsedTime}`);
   _timers.delete(label);
 }
 
-export const get = (label: string): string | boolean => {
+const get = (label: string): string | boolean => {
   const timer = _timers.get(label);
   if (!timer) {
     console.warn(`No such label '${label}' for ElapsedLogger`);//process.emitWarning

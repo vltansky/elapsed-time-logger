@@ -1,7 +1,5 @@
-const revert = process;
-process = undefined;
-import elapsed from "../../lib/esm";
-process = revert;
+process.hrtime = undefined;
+import elapsed from "../../lib";
 
 describe("Parse function", () => {
     it('should return  20 hours 3 minutes 36 seconds', () => {

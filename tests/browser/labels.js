@@ -1,7 +1,5 @@
-const revert = process;
-process = undefined;
-import elapsed from "../../lib/esm";
-process = revert;
+process.hrtime = undefined;
+import elapsed from "../../lib";
 
 console.warn = jest.fn();
 console.log = jest.fn();
