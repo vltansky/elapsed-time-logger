@@ -17,7 +17,7 @@ class ElapsedLogger implements IElapsedLogger {
     console.log(`${label ? label + ' ' : ''}${elapsedTime}`);
   }
 
-  _diff():HrTime{
+  _diff(): HrTime {
     return hrtime(this._timer);
   }
 
@@ -60,25 +60,27 @@ const start = (label: string | null = null): IElapsedLogger => {
   }
   _timers.set(label, elapsed);
   return elapsed;
-}
+};
 
 const end = (label: string, overrideLabel: string | null = null): void => {
   const elapsedTime = get(label);
-  if(elapsedTime === false){ return; }
+  if (elapsedTime === false) {
+    return;
+  }
   console.log(`${overrideLabel || label} ${elapsedTime}`);
   _timers.delete(label);
-}
+};
 
 const get = (label: string): string | boolean => {
   const timer = _timers.get(label);
   if (!timer) {
-    console.warn(`No such label '${label}' for ElapsedLogger`);//process.emitWarning
+    console.warn(`No such label '${label}' for ElapsedLogger`); //process.emitWarning
     return false;
   }
   return timer.get();
-}
+};
 export default {
   get: get,
   end: end,
-  start: start
-}
+  start: start,
+};
