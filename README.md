@@ -16,11 +16,22 @@ Works in NodeJS and in browser.
 [coveralls-url]: https://coveralls.io/github/vltansky/elapsed-time-logger
 
 package depends on [Browser-hrtime](https://github.com/vltansky/browser-hrtime)
-# Install
-`$ npm i elapsed-time-logger`
-# Usage
 
-## NodeJS
+## :package: Installation
+
+#### npm
+
+```bash
+$ npm install elapsed-time-logger
+```
+
+#### yarn
+
+```bash
+$ yarn add elapsed-time-logger
+```
+## :page_with_curl: Example
+### NodeJS
 ```js
 const elapsed = require("elapsed-time-logger");
 // chalk is't required, added as example to show that you can use colors in output
@@ -34,7 +45,7 @@ setTimeout(()=>{
     elapsed.end('label_id', 'Text that goes here will override label on output');
     // output: Text that goes here will override label on output 801ms
 }, 800);
-// if paramter label is not provided, start() will return an instance 
+// if parameter label is not provided, start() will return an instance 
 const elapsedTimer = elapsed.start();
 const elapsedTimer2 = elapsed.start();
 setTimeout(()=>{
@@ -47,25 +58,14 @@ setTimeout(()=>{
 ```
 <img src="node.png">
 
-## ESM (Browser e.g Angular, react, etc.)
+### Web with module
 ```js
 import elapsed from 'elapsed-time-logger';
-elapsed.start('test2');
-setTimeout(()=>{
-    elapsed.end('test2');
-}, 1300);
-
-
-elapsed.start('test');
-setTimeout(()=>{
-    elapsed.end('test');
-}, 1300);
 
 elapsed.start('testoverride');
 setTimeout(()=>{
     elapsed.end('testoverride', 'override label');
 }, 100);
-
 
 elapsed.start('vlad');
 setTimeout(()=>{
@@ -81,81 +81,93 @@ setTimeout(()=>{
     elapsed.end('timer label');
 }, 800);
 
-
 // or use ElapsedLogger as an instance (recommended)
 const elapsedTimer = elapsed.start();
-// const elapsedTimer2 = elapsed.start();
-console.log('smth');
 setTimeout(()=>{
     const t = elapsedTimer.get();
     console.log(t);
-    // elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
     elapsedTimer.end('finished:');
 }, 800);
 ```
 <img src="browser.png">
 
-## UMD
+## Web
 ```html
-<!DOCTYPE html>
-<html>
-
-<head>
-    <script crossorigin src="https://unpkg.com/elapsed-time-logger/lib/umd/index.js"></script>
-    <script>
-    var elapsed = Elapsed_logger;
-    elapsed.start('test2');
+<script src="node_modules/elapsed-time-logger/lib/elapsed-time-logger.min.js"></script>
+<!-- Or from CDN: -->
+<!-- <script crossorigin src="https://unpkg.com/elapsed-time-logger/lib/elapsed-time-logger.min.js"></script> -->
+```
+```javascript
+    elapsedLogger.start('test2');
     setTimeout(()=>{
-        elapsed.end('test2');
+        elapsedLogger.end('test2');
     }, 1300);
 
 
-    elapsed.start('test');
+    elapsedLogger.start('test');
     setTimeout(()=>{
-        elapsed.end('test');
+        elapsedLogger.end('test');
     }, 1300);
 
-    elapsed.start('testoverride');
+    elapsedLogger.start('testoverride');
     setTimeout(()=>{
-        elapsed.end('testoverride', 'override label');
+        elapsedLogger.end('testoverride', 'override label');
     }, 100);
 
 
-    elapsed.start('vlad');
+    elapsedLogger.start('vlad');
     setTimeout(()=>{
-        const test = elapsed.get('vlad');
+        const test = elapsedLogger.get('vlad');
         console.log(test);
     }, 1200);
 
     // ElapsedLogger is similliar to console.time() & console.timeEnd() 
-    elapsed.start('label');
-    elapsed.start('timer label');
+    elapsedLogger.start('label');
+    elapsedLogger.start('timer label');
     setTimeout(()=>{
-        elapsed.end('label');
-        elapsed.end('timer label');
+        elapsedLogger.end('label');
+        elapsedLogger.end('timer label');
     }, 800);
 
 
     // or use ElapsedLogger as an instance (recommended)
-    const elapsedTimer = elapsed.start();
-    // const elapsedTimer2 = elapsed.start();
+    const elapsedTimer = elapsedLogger.start();
+    // const elapsedTimer2 = elapsedLogger.start();
     console.log('smth');
     setTimeout(()=>{
         const t = elapsedTimer.get();
-        console.log(t);
-        // elapsedTimer2.end(chalk.green('you can use colors here, try chalk or colors packages:'));
+        console.log(t)
         elapsedTimer.end('finished:');
     }, 800);
-
-
-    </script>
-</head>
-
-<body>
-</body>
-
-</html>
 ```
 
+## :octocat: Contribution
+### environment
+
+1. clone project from Github
+
+```bash
+$ git clone git@github.com:vltansky/elapsed-time-logger.git
+```
+
+2. install npm packages
+
+```bash
+$ cd elapsed-time-logger
+$ npm install
+```
+
+3. build sources
+
+```bash
+$ npm run build
+```
+
+### test
+
+```bash
+$ npm run test
+```
+=======
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger?ref=badge_large)
