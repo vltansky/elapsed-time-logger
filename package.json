@@ -1,6 +1,6 @@
 {
   "name": "elapsed-time-logger",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Similiar to console.time() but returns readable elapsed time e.g Label: 1 hour 20 minutes 10.3 seconds",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
