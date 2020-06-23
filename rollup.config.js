@@ -1,43 +1,27 @@
 import pkg from './package.json';
-import { terser } from 'rollup-plugin-terser';
-import resolve from '@rollup/plugin-node-resolve';
+import {terser} from "rollup-plugin-terser";
 import typescript from 'rollup-plugin-typescript2';
+import sourceMaps from 'rollup-plugin-sourcemaps';
 
 export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      file: pkg.main,
-      format: 'umd',
-      name: 'elapsedLogger',
+	input: 'src/index.ts',
+	output: [
+		{
+			file: pkg.main,
+			format: 'umd',
+			name: 'hrtime',
+			plugins: [terser()],
+			sourcemap: true
+		},
+	],
+    watch: {
+        include: 'src/**',
     },
-    {
-      file: pkg.module,
-      format: 'es',
-    },
-    {
-      file: 'lib/elapsed-time-logger.min.js',
-      format: 'umd',
-      name: 'elapsedLogger',
-      plugins: [terser()],
-    },
-  ],
-  watch: {
-    include: 'src/**',
-  },
-  external: [
-    // 'browser-hrtime',
-    // ...Object.keys(pkg.dependencies || {})
-  ],
-  plugins: [
-    typescript({
-      tsconfigOverride: {
-        compilerOptions: {
-          module: 'es2015',
-        },
-      },
-      useTsconfigDeclarationDir: true,
-    }),
-    resolve(),
-  ],
+	external: [
+		...Object.keys(pkg.dependencies || {})
+	],
+    plugins: [
+		typescript(),
+		sourceMaps()
+    ]
 };

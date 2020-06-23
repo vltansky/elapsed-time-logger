@@ -93,9 +93,8 @@ setTimeout(()=>{
 
 ## Web
 ```html
-<script src="node_modules/elapsed-time-logger/lib/elapsed-time-logger.min.js"></script>
-<!-- Or from CDN: -->
-<!-- <script crossorigin src="https://unpkg.com/elapsed-time-logger/lib/elapsed-time-logger.min.js"></script> -->
+<script crossorigin src="https://unpkg.com/browser-hrtime/lib/hrtime.js"></script>
+<script crossorigin src="https://unpkg.com/elapsed-time-logger/lib/elapsed-time-logger.min.js"></script>
 ```
 ```javascript
     elapsedLogger.start('test2');
