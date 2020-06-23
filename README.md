@@ -2,7 +2,7 @@
 Similiar to console.time() & console.timeEnd() but returns formatted elapsed time `custom label: 4 hours 10 minutes 23.5 seconds` or if less then a second: `540ms`
 Works in NodeJS and in browser.
 
-![CircleCI](https://img.shields.io/circleci/build/github/vltansky/elapsed-time-logger)
+![Test](https://github.com/vltansky/elapsed-time-logger/workflows/Test/badge.svg)
 [![Coverage Status][coveralls-image]][coveralls-url]
 [![npm version](https://img.shields.io/npm/v/elapsed-time-logger)](https://www.npmjs.com/package/elapsed-time-logger)
 ![David](https://img.shields.io/david/vltansky/elapsed-time-logger)
@@ -22,13 +22,13 @@ package depends on [Browser-hrtime](https://github.com/vltansky/browser-hrtime)
 #### npm
 
 ```bash
-$ npm install elapsed-time-logger
+npm install elapsed-time-logger
 ```
 
 #### yarn
 
 ```bash
-$ yarn add elapsed-time-logger
+yarn add elapsed-time-logger
 ```
 ## :page_with_curl: Example
 ### NodeJS
@@ -140,32 +140,30 @@ setTimeout(()=>{
     }, 800);
 ```
 
-## :octocat: Contribution
-### environment
+##  Contribution
 
-1. clone project from Github
+Clone project from Github
 
 ```bash
-$ git clone git@github.com:vltansky/elapsed-time-logger.git
+git clone git@github.com:vltansky/elapsed-time-logger.git
 ```
 
-2. install npm packages
+Install npm packages
 
 ```bash
-$ cd elapsed-time-logger
-$ npm install
+cd elapsed-time-logger
+npm install
 ```
 
-3. build sources
+Build sources
 
 ```bash
-$ npm run build
+npm run build
 ```
-
-### test
+Test
 
 ```bash
-$ npm run test
+npm run test
 ```
 =======
 ## License
