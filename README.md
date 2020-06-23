@@ -56,7 +56,7 @@ setTimeout(()=>{
     elapsedTimer.end('finished:');// output: finished: 806ms
 }, 800);
 ```
-<img src="node.png">
+<img src="screenshots/node.png">
 
 ### Web with module
 ```js
@@ -89,7 +89,7 @@ setTimeout(()=>{
     elapsedTimer.end('finished:');
 }, 800);
 ```
-<img src="browser.png">
+<img src="screenshots/browser.png">
 
 ## Web
 ```html
