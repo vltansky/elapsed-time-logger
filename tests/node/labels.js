@@ -1,4 +1,4 @@
-const elapsed = require("../../lib");
+const elapsed = require("../../lib/elapsed-time-logger");
 
 console.warn = jest.fn();
 console.log = jest.fn();

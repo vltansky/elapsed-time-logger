@@ -1,4 +1,4 @@
-const elapsed = require("../../lib");
+const elapsed = require("../../lib/elapsed-time-logger");
 
 describe("Parse function", () => {
     it('should return  20 hours 3 minutes 36 seconds', () => {
