@@ -1,5 +1,5 @@
 process.hrtime = undefined;
-import elapsed from "../../lib";
+import elapsed from "../../lib/elapsed-time-logger";
 
 console.warn = jest.fn();
 console.log = jest.fn();

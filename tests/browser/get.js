@@ -1,5 +1,5 @@
 process.hrtime = undefined;
-import elapsed from "../../lib";
+import elapsed from "../../lib/elapsed-time-logger";
 
 const timer = elapsed.start('test');
 jest.spyOn(timer, "_diff").mockReturnValue([100, 1200]);
