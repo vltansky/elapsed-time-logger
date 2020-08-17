@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "@types/node": "^14.0.14",
     "coveralls": "^3.1.0",
     "dotenv-cli": "^3.1.0",
