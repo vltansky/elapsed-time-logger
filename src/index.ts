@@ -6,6 +6,7 @@ interface IElapsedLogger {
   parse(hrtime: HrTime): string;
 }
 type HrTime = [number, number];
+var test = 'test';
 class ElapsedLogger implements IElapsedLogger {
   private _timer: HrTime;
   constructor() {
