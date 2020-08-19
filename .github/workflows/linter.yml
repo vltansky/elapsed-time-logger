@@ -1,4 +1,7 @@
 name: Lint Code Base
+env:
+  VALIDATE_TYPESCRIPT_STANDARD: false
+  VALIDATE_TYPESCRIPT_ES: true
 
 on:
   push:
