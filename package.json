@@ -11,8 +11,7 @@
     "test": "jest --collectCoverage=true",
     "build": "rollup -c",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "release": "dotenv release-it"
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
