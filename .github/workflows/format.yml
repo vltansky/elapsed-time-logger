@@ -1,9 +1,9 @@
 name: Format
 on:
   push:
-    branches: [master, format]
+    branches: [master]
   pull_request:
-    branches: [master, format]
+    branches: [master]
 jobs:
   format:
     runs-on: ubuntu-latest
