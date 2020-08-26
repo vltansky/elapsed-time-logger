@@ -27,6 +27,7 @@ class ElapsedLogger implements IElapsedLogger {
   }
 
   parse(hrtime: HrTime): string {
+        let example ={"OK":"TEST"};
     let result = '';
     const sourceMS: number = (hrtime[0] * 1e9 + hrtime[1]) / 1e6;
     const ms: number = Math.round(sourceMS % 1000);
