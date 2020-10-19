@@ -8,7 +8,7 @@ export default {
 	input: 'src/index.ts',
 	output: [
 		{
-			file: `dist/${pkg.main}`,
+			file: pkg.main,
 			format: 'umd',
 			name: 'hrtime',
 			plugins: [terser()],
@@ -26,7 +26,6 @@ export default {
 		sourceMaps(),
 		copy({
 			targets: [
-				{ src: 'package.json', dest: 'dist' },
 				{ src: 'src/elapsed-time-logger.d.ts', dest: 'dist' },
 			]
 		})
