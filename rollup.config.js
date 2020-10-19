@@ -2,12 +2,13 @@ import pkg from './package.json';
 import {terser} from "rollup-plugin-terser";
 import typescript from 'rollup-plugin-typescript2';
 import sourceMaps from 'rollup-plugin-sourcemaps';
+import copy from 'rollup-plugin-copy'
 
 export default {
 	input: 'src/index.ts',
 	output: [
 		{
-			file: pkg.main,
+			file: `dist/${pkg.main}`,
 			format: 'umd',
 			name: 'hrtime',
 			plugins: [terser()],
@@ -22,6 +23,12 @@ export default {
 	],
     plugins: [
 		typescript(),
-		sourceMaps()
+		sourceMaps(),
+		copy({
+			targets: [
+				{ src: 'package.json', dest: 'dist' },
+				{ src: 'src/elapsed-time-logger.d.ts', dest: 'dist' },
+			]
+		})
     ]
 };
