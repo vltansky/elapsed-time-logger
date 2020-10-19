@@ -74,7 +74,7 @@ const end = (label: string, overrideLabel: string | null = null): void => {
 const get = (label: string): string | boolean => {
   const timer = _timers.get(label);
   if (!timer) {
-    console.warn(`No such label '${label}' for ElapsedLogger`); //process.emitWarning
+    console.warn(`No such label '${label}' for ElapsedLogger`); // process.emitWarning
     return false;
   }
   return timer.get();
