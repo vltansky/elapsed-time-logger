@@ -80,7 +80,7 @@ const get = (label: string): string | boolean => {
   return timer.get();
 };
 export default {
-  get: get,
-  end: end,
-  start: start,
+  get,
+  end,
+  start,
 };
