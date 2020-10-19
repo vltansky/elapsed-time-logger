@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 process.hrtime = undefined;
-import elapsed from "../../lib/elapsed-time-logger";
+import elapsed from "../../dist/elapsed-time-logger";
 
 console.log = jest.fn();
 describe("Log function", () => {
