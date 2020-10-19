@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+      - next
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -21,7 +22,7 @@ jobs:
 
       - name: Test
         run: npm test
-        
+
       - name: Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
