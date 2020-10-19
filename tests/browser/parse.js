@@ -1,5 +1,5 @@
 process.hrtime = undefined;
-import elapsed from "../../lib/elapsed-time-logger";
+import elapsed from "../../dist/elapsed-time-logger";
 
 describe("Parse function", () => {
     it('should return  20 hours 3 minutes 36 seconds', () => {
