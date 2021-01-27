@@ -1,4 +1,7 @@
 # Elapsed time logger
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 Similiar to console.time() & console.timeEnd() but returns formatted elapsed time `custom label: 4 hours 10 minutes 23.5 seconds` or if less then a second: `540ms`
 Works in NodeJS and in browser.
 
@@ -168,3 +171,23 @@ npm run test
 =======
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger?ref=badge_large)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/ofermisk"><img src="https://avatars.githubusercontent.com/u/10485117?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ofermisk</b></sub></a><br /><a href="#mentoring-ofermisk" title="Mentoring">🧑‍🏫</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
