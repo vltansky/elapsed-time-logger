@@ -181,7 +181,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/vltansky"><img src="https://avatars.githubusercontent.com/u/5851280?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vlad Tansky</b></sub></a><br /><a href="#maintenance-vltansky" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/vltansky"><img src="https://avatars.githubusercontent.com/u/5851280?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vlad Tansky</b></sub></a><br /><a href="#maintenance-vltansky" title="Maintenance">🚧</a> <a href="https://github.com/vltansky/elapsed-time-logger/commits?author=vltansky" title="Code">💻</a></td>
   </tr>
 </table>
 
