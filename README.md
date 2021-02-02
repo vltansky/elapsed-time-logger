@@ -20,19 +20,17 @@ Works in NodeJS and in browser.
 
 package depends on [Browser-hrtime](https://github.com/vltansky/browser-hrtime)
 
+ **1.28 KB** (minified and gzipped).
+  [Size Limit](https://github.com/ai/size-limit) controls the size.
+
 ## :package: Installation
 
 #### npm
 
 ```bash
-npm install elapsed-time-logger
+npm install elapsed-time-logger # yarn add elapsed-time-logger
 ```
 
-#### yarn
-
-```bash
-yarn add elapsed-time-logger
-```
 ## :page_with_curl: Example
 ### NodeJS
 ```js
