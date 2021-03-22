@@ -73,7 +73,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "semantic-release": "^17.4.0",
     "size-limit": "^4.9.2",
-    "terser": "^5.6.0",
+    "terser": "^5.6.1",
     "ts-jest": "^26.5.2",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
