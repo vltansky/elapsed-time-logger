@@ -20,8 +20,7 @@ Works in NodeJS and in browser.
 
 package depends on [Browser-hrtime](https://github.com/vltansky/browser-hrtime)
 
- **1.28 KB** (minified and gzipped).
-  [Size Limit](https://github.com/ai/size-limit) controls the size.
+**1.28 KB** (minified and gzipped)
 
 ## :package: Installation
 
