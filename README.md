@@ -11,8 +11,6 @@ Works in NodeJS and in browser.
 ![David](https://img.shields.io/david/vltansky/elapsed-time-logger)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/elapsed-time-logger)
 ![NPM](https://img.shields.io/npm/l/elapsed-time-logger)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger?ref=badge_shield)
 
 
 [coveralls-image]: https://img.shields.io/coveralls/github/vltansky/elapsed-time-logger
@@ -22,15 +20,13 @@ package depends on [Browser-hrtime](https://github.com/vltansky/browser-hrtime)
 
 **1.28 KB** (minified and gzipped)
 
-## :package: Installation
-
-#### npm
+## Installation
 
 ```bash
 npm install elapsed-time-logger # yarn add elapsed-time-logger
 ```
 
-## :page_with_curl: Example
+## Examples
 ### NodeJS
 ```js
 const elapsed = require("elapsed-time-logger");
@@ -166,25 +162,6 @@ Test
 npm run test
 ```
 =======
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fvltansky%2Felapsed-time-logger?ref=badge_large)
+### License
 
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/ofermisk"><img src="https://avatars.githubusercontent.com/u/10485117?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ofermisk</b></sub></a><br /><a href="#mentoring-ofermisk" title="Mentoring">🧑‍🏫</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+[MIT](LICENSE)
